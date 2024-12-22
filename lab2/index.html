@@ -44,26 +44,24 @@
                 const taskElement = document.createElement('div');
                 taskElement.className = 'task';
 
-                // Task text
+         
                 const taskText = document.createElement('div');
                 taskText.textContent = task.text;
 
-                // Button container
                 const buttonContainer = document.createElement('div');
                 buttonContainer.className = 'button-container';
 
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Удалить';
-                deleteButton.classList.add('delete'); // Добавляем класс для кнопки удаления
+                deleteButton.classList.add('delete'); 
                 deleteButton.onclick = () => deleteTask(index);
 
-                // For 'new' tasks
                 if (task.status === 'new') {
                     const rightButton = document.createElement('button');
                     rightButton.textContent = '>';
                     rightButton.onclick = () => moveRight(index);
 
-                    // Set buttons
+                    
                     buttonContainer.classList.add('centered');
                     buttonContainer.appendChild(deleteButton);
                     buttonContainer.appendChild(rightButton);
@@ -73,7 +71,6 @@
                     newTasksContainer.appendChild(taskElement);
 
                 } else if (task.status === 'inProgress') {
-                    // For 'inProgress' tasks
                     const leftButton = document.createElement('button');
                     leftButton.textContent = '<';
                     leftButton.onclick = () => moveLeft(index);
@@ -82,7 +79,7 @@
                     rightButton.textContent = '>';
                     rightButton.onclick = () => moveRight(index);
 
-                    // Set buttons
+                
                     buttonContainer.classList.remove('centered');
                     buttonContainer.appendChild(leftButton);
                     buttonContainer.appendChild(deleteButton);
@@ -93,12 +90,11 @@
                     inProgressTasksContainer.appendChild(taskElement);
 
                 } else if (task.status === 'completed') {
-                    // For 'completed' tasks
                     const leftButton = document.createElement('button');
                     leftButton.textContent = '<';
                     leftButton.onclick = () => moveLeft(index);
 
-                    // Set buttons
+                
                     buttonContainer.classList.add('centered');
                     buttonContainer.appendChild(leftButton);
                     buttonContainer.appendChild(deleteButton);
