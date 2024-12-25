@@ -17,14 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Инициализация задач из localStorage
 const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
 const newTasksContainer = document.getElementById('newTasks');
 const inProgressTasksContainer = document.getElementById('inProgressTasks');
 const completedTasksContainer = document.getElementById('completedTasks');
 
-// Функция отображения задач
 function renderTasks() {
     newTasksContainer.innerHTML = '';
     inProgressTasksContainer.innerHTML = '';
@@ -34,11 +32,9 @@ function renderTasks() {
         const taskElement = document.createElement('div');
         taskElement.className = 'task';
 
-        // Текст задачи
         const taskText = document.createElement('div');
         taskText.textContent = task.text;
 
-        // Контейнер кнопок
         const buttonContainer = document.createElement('div');
         buttonContainer.className = 'button-container';
 
@@ -96,7 +92,6 @@ function renderTasks() {
     saveTasks();
 }
 
-// Функция перемещения задачи влево
 function moveLeft(index) {
     if (tasks[index].status === 'inProgress') {
         tasks[index].status = 'new';
@@ -106,7 +101,7 @@ function moveLeft(index) {
     renderTasks();
 }
 
-// Функция перемещения задачи вправо
+
 function moveRight(index) {
     if (tasks[index].status === 'new') {
         tasks[index].status = 'inProgress';
@@ -116,18 +111,15 @@ function moveRight(index) {
     renderTasks();
 }
 
-// Функция удаления задачи
 function deleteTask(index) {
     tasks.splice(index, 1);
     renderTasks();
 }
 
-// Функция сохранения задач в localStorage
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Функция добавления новой задачи
 function addTask(taskText) {
     if (!taskText.trim()) {
         alert('Задача не может быть пустой!');
@@ -137,5 +129,4 @@ function addTask(taskText) {
     renderTasks();
 }
 
-// Инициализация отображения задач
 renderTasks();

@@ -1,14 +1,16 @@
-/* styles.css */
-
-
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
     font-family: Arial;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
     background-color: #333;
     color: #fff;
+    padding: 10px 20px;
 }
 
 .logo {
@@ -23,14 +25,18 @@
 
 .nav {
     display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    flex-grow: 1;
     align-items: center;
+    padding: 0 20px;
 }
 
 .menu {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
 }
 
 .menu li {
@@ -49,6 +55,7 @@
     justify-content: space-around;
     height: 24px;
     cursor: pointer;
+    padding: 0 20px;
 }
 
 .burger-menu span {
@@ -101,7 +108,7 @@
 }
 
 .sidebar li {
-    margin: 15px 0;
+    margin: 25px 0;
 }
 
 .sidebar a {
@@ -109,127 +116,11 @@
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-}
-
-
-@font-face {
-    font-family: 'Slimamif';
-    src: url(Slimamif.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* styles.css */
-
-/* Общие стили для текста */
-body {
-    background: url('background.png') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Slimamif', Arial, Helvetica, sans-serif;
-    color: #000; /* Черный цвет текста для всей страницы */
-    margin: 0;
-    padding: 0;
-}
-
-/* Заголовки и текст задач */
-h2 {
-    text-align: center;
-    color: #000; /* Черный цвет для заголовка */
-    font-size: 36px;
-    margin-top: 40px;
-}
-
-
-/* Стили для кнопок */
-button {
-    background-color: #ccc267; /* Цвет кнопки - желтый, напоминающий бумагу */
-    border: none;
-    padding: 10px 10px;
-    font-size: 12px;
-    cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-    background-color: #fdd835; /* Немного темнее при наведении */
-}
-
-
-
-
-
-.task-board {
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
     padding: 20px;
-    flex-wrap: wrap;
 }
 
-.task-column {
-    text-align: center;
-    
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    padding: 10px 20px;
-    width: 30%;
-    box-sizing: border-box;
-    min-width: 250px; /* Минимальная ширина для колонки */
-    flex-grow: 1;
-}
 
-.task-column h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
 
-.task-column p {
-    font-size: 2rem;
-    margin: 0;
-}
-
-/* Адаптивность для маленьких экранов */
-@media (max-width: 768px) {
-    .task-board {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .task-column {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .task-column h2 {
-        font-size: 1.2rem;
-    }
-
-    .task-column p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
-
-    .burger-menu {
-        display: flex;
-    }
-
-    .content {
-        flex-direction: column;
-    }
-
-    .info, .image {
-        max-width: 100%;
-    }
-}
 
 
 /* Кнопка "Добавить задачу" */
@@ -238,18 +129,18 @@ button:hover {
     justify-content: space-between;
     gap: 16px;
     margin: 60px auto;
-    font-size: 25px; /* Устанавливает размер текста на кнопке */
-    padding: 10px 20px; /* Устанавливает внутренние отступы для увеличения кнопки */
-    background-color: #ccc267; /* Цвет фона кнопки (желтый, как у других кнопок) */
-    color: rgb(0, 0, 0); /* Цвет текста */
-    border: none; /* Убирает рамку */
-    border-radius: 5px; /* Округляет углы */
-    cursor: pointer; /* Показывает курсор в виде руки */
-    transition: background-color 0.3s; /* Плавный переход для изменения цвета */
+    font-size: 25px; 
+    padding: 10px 20px; 
+    background-color: #ccc267; 
+    color: rgb(0, 0, 0); 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
 }
 
 #openDialogBtn:hover {
-    background-color: #fdd835; /* Немного темнее при наведении */
+    background-color: #fdd835; 
 }
 
 /* Модальное окно */
@@ -258,7 +149,7 @@ dialog {
     width: 450px;
     padding: 25px;
     border-radius: 12px;
-    background: linear-gradient(145deg, #ffffff, #f1f1f1); /* Легкий градиент для фона */
+    background: linear-gradient(145deg, #ffffff, #f1f1f1); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 9999;
@@ -319,4 +210,157 @@ form button:active {
 
 #closeDialogBtn:active {
     transform: scale(1);
+}
+
+.menu a.active {
+    pointer-events: none; 
+    color: #f0a500; 
+}
+.sidebar a.active {
+    pointer-events: none; 
+    color: #f0a500; /
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 80vh; 
+    text-align: center; 
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+
+.error-image {
+    max-width: 90%; 
+    height: auto; 
+    max-height: 50vh; 
+    margin-top: 20px; 
+}
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Slimamif';
+    src: url(Slimamif.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* styles.css */
+
+/* Общие стили для текста */
+body {
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Slimamif', Arial, Helvetica, sans-serif;
+    color: #000; /* Черный цвет текста для всей страницы */
+    margin: 0;
+    padding: 80px;
+   
+}
+
+/* Заголовки и текст задач */
+h2 {
+    text-align: center;
+    color: #000; /* Черный цвет для заголовка */
+    font-size: 36px;
+
+}
+
+
+/* Стили для кнопок */
+button {
+    background-color: #ccc267; /* Цвет кнопки - желтый, напоминающий бумагу */
+    border: none;
+    padding: 10px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #fdd835; /* Немного темнее при наведении */
+}
+
+
+
+
+
+.task-board {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.task-column {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 10px 10px ;
+    width: 30%;
+    box-sizing: border-box;
+    min-width: 250px; /* Минимальная ширина для колонки */
+    flex-grow: 1;
+}
+
+.task-column h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.task-column p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+
+
+
+@media (max-width: 480px) {
+    .task-column h2 {
+        font-size: 1.2rem;
+    }
+
+    .task-column p {
+        font-size: 0.9rem;
+    }
+    .task-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .info, .image {
+        max-width: 100%;
+    }
+    .task-column {
+        width: 100%;
+    }
+    .task-board {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
