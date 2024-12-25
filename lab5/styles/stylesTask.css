@@ -1,3 +1,23 @@
+
+@font-face {
+    font-family: 'Slimamif';
+    src: url('./fonts/Slimamif.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    background: url('imgCSS/background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Slimamif', Arial, Helvetica, sans-serif;
+    color: #000; /* Черный цвет текста для всей страницы */
+    margin: 0;
+    padding: 80px;
+   
+}
+
+
 .header {
     position: fixed;
     top: 0;
@@ -204,7 +224,7 @@ form button:active {
 }
 .sidebar a.active {
     pointer-events: none; 
-    color: #f0a500; /
+    color: #f0a500; 
 }
 
 .error-container {
@@ -232,31 +252,26 @@ form button:active {
 
 
 
-@font-face {
-    font-family: 'Slimamif';
-    src: url(Slimamif.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* styles.css */
 
 /* Общие стили для текста */
-body {
-    background: url('background.png') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Slimamif', Arial, Helvetica, sans-serif;
-    color: #000; /* Черный цвет текста для всей страницы */
-    margin: 0;
-    padding: 80px;
-   
-}
 
 /* Заголовки и текст задач */
 h2 {
     text-align: center;
     color: #000; /* Черный цвет для заголовка */
     font-size: 36px;
+    
+
+}
+
+#listTask h2 {
+    margin: 100px auto 10px;
+    text-align: center;
+    color: #000; /* Черный цвет для заголовка */
+    font-size: 36px;
+    
 
 }
 
@@ -324,26 +339,6 @@ button:hover {
     .task-column {
         width: 100%;
     }
-    .burger-menu {
-        display: flex;
-    }
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 24px;
-        cursor: pointer;
-        padding: 0 20px;
-    }
-    
-    .burger-menu span {
-        display: flex;
-        width: 30px;
-        height: 3px;
-        background-color: #fff;
-        transition: all 0.3s ease;
-    }
 }
 
 @media (max-width: 768px) {
@@ -369,7 +364,6 @@ button:hover {
         flex-direction: column;
         align-items: stretch;
     }
-
     .burger-menu {
         display: flex;
         flex-direction: column;
@@ -381,13 +375,12 @@ button:hover {
     }
     
     .burger-menu span {
-        display: flex;
+        display: block;
         width: 30px;
         height: 3px;
         background-color: #fff;
         transition: all 0.3s ease;
     }
-
 }
 
 
@@ -408,3 +401,6 @@ button:hover {
     position: relative;
     top: -8px;
 }
+
+
+

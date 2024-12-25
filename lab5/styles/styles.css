@@ -1,4 +1,5 @@
-.header {
+.Index{
+    .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -49,8 +50,6 @@
     font-size: 16px;
 }
 
-
-
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -66,6 +65,7 @@
 }
 
 .image {
+    padding: 50px;
     flex: 1;
     max-width: 500px;
 }
@@ -106,8 +106,86 @@
 }
 
 
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+    .task-board {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
+    .task-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
 
+@media (max-width: 480px) {
+    .task-column h2 {
+        font-size: 1.2rem;
+    }
+
+    .task-column p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .info, .image {
+        max-width: 100%;
+    }
+    .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.burger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu--active span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.hamburger-menu--active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu--active span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000; /* Черный цвет текста для всей страницы */
+    margin: 0;
+    padding: 80px;
+
+}
 
 /* Кнопка "Добавить задачу" */
 #openDialogBtn {
@@ -204,7 +282,7 @@ form button:active {
 }
 .sidebar a.active {
     pointer-events: none; 
-    color: #f0a500; /
+    color: #f0a500;
 }
 
 .error-container {
@@ -226,185 +304,21 @@ form button:active {
     margin-top: 20px; 
 }
 
-
-
-
-
-
-
-@font-face {
-    font-family: 'Slimamif';
-    src: url(Slimamif.ttf);
-    font-weight: normal;
-    font-style: normal;
+.menu a.active {
+    pointer-events: none; 
+    color: #f0a500; 
 }
-
-/* styles.css */
-
-/* Общие стили для текста */
-body {
-    background: url('background.png') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Slimamif', Arial, Helvetica, sans-serif;
-    color: #000; /* Черный цвет текста для всей страницы */
-    margin: 0;
-    padding: 80px;
-   
-}
-
-/* Заголовки и текст задач */
-h2 {
-    text-align: center;
-    color: #000; /* Черный цвет для заголовка */
-    font-size: 36px;
-
+.sidebar a.active {
+    pointer-events: none; 
+    color: #f0a500; 
 }
 
 
-/* Стили для кнопок */
-button {
-    background-color: #ccc267; /* Цвет кнопки - желтый, напоминающий бумагу */
-    border: none;
-    padding: 10px 10px;
-    font-size: 10px;
-    cursor: pointer;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
 
-button:hover {
-    background-color: #fdd835; /* Немного темнее при наведении */
+
 }
 
 
 
 
 
-.task-board {
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-
-.task-column {
-    text-align: center;
-    margin-top: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    padding: 10px 10px ;
-    width: 30%;
-    box-sizing: border-box;
-    min-width: 250px; /* Минимальная ширина для колонки */
-    flex-grow: 1;
-}
-
-.task-column h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.task-column p {
-    font-size: 2rem;
-    margin: 0;
-}
-
-
-
-
-@media (max-width: 480px) {
-    .task-column h2 {
-        font-size: 1.2rem;
-    }
-
-    .task-column p {
-        font-size: 0.9rem;
-    }
-    .task-column {
-        width: 100%;
-    }
-    .burger-menu {
-        display: flex;
-    }
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 24px;
-        cursor: pointer;
-        padding: 0 20px;
-    }
-    
-    .burger-menu span {
-        display: flex;
-        width: 30px;
-        height: 3px;
-        background-color: #fff;
-        transition: all 0.3s ease;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
-
-    .burger-menu {
-        display: flex;
-    }
-
-    .content {
-        flex-direction: column;
-    }
-
-    .info, .image {
-        max-width: 100%;
-    }
-    .task-column {
-        width: 100%;
-    }
-    .task-board {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 24px;
-        cursor: pointer;
-        padding: 0 20px;
-    }
-    
-    .burger-menu span {
-        display: flex;
-        width: 30px;
-        height: 3px;
-        background-color: #fff;
-        transition: all 0.3s ease;
-    }
-
-}
-
-
-
-
-.hamburger-menu--active span:nth-child(1) {
-    transform: rotate(45deg);
-    position: relative;
-    top: 8px;
-}
-
-.hamburger-menu--active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu--active span:nth-child(3) {
-    transform: rotate(-45deg);
-    position: relative;
-    top: -8px;
-}

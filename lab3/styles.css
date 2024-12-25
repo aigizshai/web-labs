@@ -125,6 +125,39 @@
     .task-column p {
         font-size: 0.9rem;
     }
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        padding: 0 20px;
+    }
+    
+    .burger-menu span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger-menu--active span:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+    
+    .hamburger-menu--active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu--active span:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -142,6 +175,39 @@
 
     .info, .image {
         max-width: 100%;
+    }
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        padding: 0 20px;
+    }
+    
+    .burger-menu span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger-menu--active span:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+    
+    .hamburger-menu--active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu--active span:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
     }
 }
 body {
@@ -286,36 +352,4 @@ form button:active {
 
 
 
-.burger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 24px;
-    cursor: pointer;
-    padding: 0 20px;
-}
 
-.burger-menu span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    transition: all 0.3s ease;
-}
-
-.hamburger-menu--active span:nth-child(1) {
-    transform: rotate(45deg);
-    position: relative;
-    top: 8px;
-}
-
-.hamburger-menu--active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu--active span:nth-child(3) {
-    transform: rotate(-45deg);
-    position: relative;
-    top: -8px;
-}
